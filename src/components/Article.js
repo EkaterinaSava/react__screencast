@@ -12,20 +12,22 @@ class Article extends Component {
     const body = this.state.isOpen && <section>{article.text}</section>
 
     return (
-      <div className="hello">
-        <h2>
-          {article.title}
-          <button onClick={this.handleClick}>{this.state.isOpen ? 'close' : 'open'}</button>
-        </h2>
-        {body}
-        <h3>creation date: {(new Date (article.date)).toDateString()}</h3>
+      <div className="card">
+        <div className="card-header">
+          <h2 className="card-header-title">{article.title}</h2>
+          <div className="card-header-icon">
+            <button className="button is-dark is-small" onClick={this.handleClick}>{this.state.isOpen ? 'close' : 'open'}</button>
+          </div>
+        </div>
+        <div className="card-content">
+          {body}
+          <div className="card-footer">creation date: {(new Date (article.date)).toDateString()}</div>
+        </div>
       </div>
     )
   }
 
   handleClick = () => {
-    console.log('---', 'clicked')
-
     this.setState({
       isOpen: !this.state.isOpen
     })
