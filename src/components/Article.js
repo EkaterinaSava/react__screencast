@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
+import './common.css';
 
 class Article extends Component {
 
   state = {
-    isOpen: true
+    isOpen: false
   }
 
   render() {
     const {article} = this.props
 
-    const body = this.state.isOpen && <section>{article.text}</section>
+    const body = this.state.isOpen && <section className="card-content">{article.text}</section>
 
     return (
       <div className="card">
@@ -19,9 +20,11 @@ class Article extends Component {
             <button className="button is-dark is-small" onClick={this.handleClick}>{this.state.isOpen ? 'close' : 'open'}</button>
           </div>
         </div>
-        <div className="card-content">
+        <div className="card-content__outer">
           {body}
-          <div className="card-footer">creation date: {(new Date (article.date)).toDateString()}</div>
+        </div>
+        <div className="card-footer">
+          <div className="card-footer__inner">Date: {(new Date (article.date)).toDateString()}</div>
         </div>
       </div>
     )
