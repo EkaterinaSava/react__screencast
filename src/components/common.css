@@ -1,3 +1,14 @@
+/* header */
+.hero {
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, .35);
+}
+
+/* navbar */
+.navbar {
+  margin-top: 45px;
+}
+
+/* cards stuff */
 .card-footer__inner {
   color: gray;
   font-size: 12px;
