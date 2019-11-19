@@ -22,15 +22,15 @@ class App extends Component {
         </section>
   
         <div className="container">
-          <nav class="navbar">
-            <div class="navbar-end">
-              <button className="button is-link is-outlined" onClick = {this.revert}>Revert</button>
+          <nav className="navbar">
+            <div className="navbar-end">
+              <button className="button is-link is-outlined" onClick = {this.revert}> Revert</button>
             </div>
           </nav>
         </div>
   
         <div className="container">
-          <ArticleList articles = {articles} />
+          <ArticleList articles = {this.state.reverted ? articles.reverse() : articles} />
         </div>
       </div>
     )
