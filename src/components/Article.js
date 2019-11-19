@@ -1,10 +1,24 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import './common.css';
 
-class Article extends Component {
+class Article extends PureComponent {
 
-  state = {
-    isOpen: false
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      isOpen: props.defaultOpen
+    }
+  }
+
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   return this.state.isOpen !== nextState.isOpen
+  // }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.defaultOpen !== this.props.defaultOpen) this.setState ({
+      isOpen: nextProps.defaultOpen
+    })
   }
 
   render() {
