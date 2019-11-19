@@ -2,7 +2,11 @@
 
 Немного кода по [React.js-скринкасту](https://learn.javascript.ru/screencast/react)
 
+Приложение развернуто и задеплоино через Firebase [вот тут](https://react-screencast-by-sava.firebaseapp.com/)
+
 ---
+
+## Default create-react-app Settings
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
